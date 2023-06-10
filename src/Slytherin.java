@@ -4,7 +4,6 @@ public class Slytherin extends Hogwarts {
     private int ambition;
     private int resourcefulness;
     private int lustForPower;
-
     public Slytherin(String name, String surName, int power, int transgress, int theTrick, int determination, int ambition, int resourcefulness, int lustForPower) {
         super(name,surName,power,transgress);
         this.theTrick = theTrick;
@@ -13,36 +12,26 @@ public class Slytherin extends Hogwarts {
         this.resourcefulness = resourcefulness;
         this.lustForPower = lustForPower;
     }
-
-    public int getTheTrick() {
-        return theTrick;
+    @Override
+    public String toString() {
+        return  "Слизерин { " +
+                super.toString() +
+                ", хитрость " + theTrick +
+                ", решительность " + determination +
+                ", амбициозность " + ambition +
+                ", находчивость " + resourcefulness +
+                ", жажда власти " + lustForPower + "}";
     }
-    public int getDetermination() {
-        return determination;
+    @Override
+    void printPerson() {
+        System.out.println(this);
     }
-    public int getAmbition() {
-        return ambition;
+    @Override
+    int calcScoreInClass() {
+        return this.theTrick+this.determination + this.resourcefulness + this.ambition + this.lustForPower;
     }
-    public int getResourcefulness() {
-        return resourcefulness;
-    }
-    public int getLustForPower() {
-        return lustForPower;
-    }
-
-    public void setTheTrick(int theTrick) {
-        this.theTrick = theTrick;
-    }
-    public void setDetermination(int determination) {
-        this.determination = determination;
-    }
-    public void setAmbition(int ambition) {
-        this.ambition = ambition;
-    }
-    public void setResourcefulness(int resourcefulness) {
-        this.resourcefulness = resourcefulness;
-    }
-    public void setLustForPower(int lustForPower) {
-        this.lustForPower = lustForPower;
+    @Override
+    void printCompareOfStudents(Hogwarts best, Hogwarts worst) {
+        System.out.println(String.format("%s лучший из Слизерин, чем %s", best.getName(), worst.getName()));
     }
 }

@@ -11,30 +11,25 @@ public class Ravenclaw extends Hogwarts {
         this.wit = wit;
         this.creativity = creativity;
     }
-
-    public int getMind() {
-        return mind;
+    @Override
+    int calcScoreInClass() {
+        return this.mind + this.wisdom + this. wit + this.creativity;
     }
-    public int getWisdom() {
-        return wisdom;
+    @Override
+    void printCompareOfStudents(Hogwarts best, Hogwarts worst) {
+        System.out.println(String.format("%s лучший Когтевран, чем %s", best.getName(), worst.getName()));
     }
-    public int getWit() {
-        return wit;
+    @Override
+    public String toString() {
+        return  "Когтевран. {" +
+                super.toString() +
+                ", ум " + mind +
+                ", мудрость " + wisdom +
+                ", остроумие " + wit +
+                ", творчество " + creativity + "}";
     }
-    public int getCreativity() {
-        return creativity;
-    }
-
-    public void setMind(int mind) {
-        this.mind = mind;
-    }
-    public void setWisdom(int wisdom) {
-        this.wisdom = wisdom;
-    }
-    public void setWit(int wit) {
-        this.wit = wit;
-    }
-    public void setCreativity(int creativity) {
-        this.creativity = creativity;
+    @Override
+    void printPerson() {
+        System.out.println(this);
     }
 }
